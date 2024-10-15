@@ -1,5 +1,6 @@
 import React from 'react';
 import Sidenav from './partials/Sidenav';
+import Topnav from './partials/Topnav';
 
 const Home = () => {
 
@@ -10,7 +11,9 @@ const Home = () => {
             <div className='w-[18%] h-full '>
                 <Sidenav />
             </div>
-            <div className='w-[82%] h-full '></div>
+            <div className='w-[82%] h-full '>
+                <Topnav />
+            </div>
         </div>
     )
 }
