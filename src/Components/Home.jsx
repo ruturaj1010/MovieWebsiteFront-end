@@ -29,8 +29,8 @@ const Home = () => {
     }, [] )
 
     return wallpaper ? (
-        <div className='w-full h-full flex items-center justify-center'>
-            <div className='w-[18%] h-full '>
+        <div className='w-full h-full flex'>
+            <div className='w-[18%] h-full border-r-2 border-zinc-500'>
                 <Sidenav />
             </div>
             <div className='w-[82%] h-full '>
