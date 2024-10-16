@@ -1,6 +1,7 @@
 import axios from "../../utils/Axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import queryImg from "/queryImg.png";
 
 const Topnav = () => {
 
@@ -10,7 +11,7 @@ const Topnav = () => {
     const getSearches = async () => {
         try {
             const { data } = await axios.get( `/search/multi?query=${query}` )
-            console.log( data.results );
+            // console.log( data.results );
             setSearches( data.results );
 
         } catch ( error ) {
@@ -37,9 +38,16 @@ const Topnav = () => {
             <div className="w-[55%] max-h-[52.7vh]  absolute top-[95%] bg-zinc-300 text-black overflow-y-auto">
 
                 { searches && searches.map( ( item, index ) => {
-                    return <Link key={item.id} className="w-full px-10 py-3 font-medium duration-300 text-zinc-900 hover:text-zinc-700 bg-zinc-300 hover:bg-zinc-100 flex justify-start items-center gap-4 border-b border-zinc-500">
-                        <img className="w-[4vw] h-[4vw] object-center object-cover rounded-md" src={`https://image.tmdb.org/t/p/original/${item.backdrop_path || item.profile_path }`} alt="" />
-                        <h1 className="text-lg">{item.name || item.original_name || item.title || item.original_title}</h1>
+                    return <Link key={ item.id } className="w-full px-10 py-3 font-medium duration-300 text-zinc-900 hover:text-zinc-700 bg-zinc-300 hover:bg-zinc-100 flex justify-start items-center gap-4 border-b border-zinc-500">
+                        <img
+                            className="w-[4vw] h-[4vw] object-center object-cover rounded-md"
+                            src={ item.backdrop_path || item.profile_path || item.poster_path ?
+                                `https://image.tmdb.org/t/p/original/${item.backdrop_path || item.profile_path || item.poster_path}`
+                                : queryImg }
+                            alt=""
+                        />
+
+                        <h1 className="text-lg">{ item.name || item.original_name || item.title || item.original_title }</h1>
                     </Link>
                 } ) }
 
