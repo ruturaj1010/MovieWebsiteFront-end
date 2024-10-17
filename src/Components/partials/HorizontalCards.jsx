@@ -12,7 +12,7 @@ const HorizontalCards = ( { data } ) => {
                         : queryImg
                         }` } alt="" />
                     <div className='w-full h-28 flex flex-col justify-between items-start px-1'>
-                        <h1 className='text-sm text-wrap font-semibold text-purple-400' >{ item.name || item.original_name || item.title || item.original_title }</h1>
+                        <h1 className='text-sm text-wrap font-semibold text-purple-400' >{ (item.name || item.original_name || item.title || item.original_title).slice(0, 45) }</h1>
                         <p className='text-sm text-wrap' >{ item.overview.slice( 0, 50 ) } ...<span className='text-blue-400 hover:underline cursor-pointer'>more</span> </p>
                     </div>
                 </div>

@@ -5,6 +5,7 @@ import axios from '../utils/Axios';
 import Header from './partials/Header';
 import HorizontalCards from './partials/HorizontalCards';
 import Dropdown from './partials/Dropdown';
+import Loader from './Loader';
 
 const Home = () => {
 
@@ -38,8 +39,10 @@ const Home = () => {
     }
 
     useEffect( () => {
-        !wallpaper && getWallpaper();
-        getTrending()
+        setTimeout( () => {
+            !wallpaper && getWallpaper();
+            getTrending()
+        }, 400 )
     }, [category] )
 
     // console.log(trending);
@@ -56,13 +59,13 @@ const Home = () => {
                 <div className='w-full h-[54vh] p-4 '>
                     <div className='w-full flex justify-between items-center pb-2'>
                         <h1 className='text-2xl font-semibold '>Trending</h1>
-                        <Dropdown title={ "Filter" } options={ ["all", "tv", "movie"] } catfunc={(e)=>setCategory(e.target.value)} />
+                        <Dropdown title={ "Filter" } options={ ["all", "tv", "movie"] } catfunc={ ( e ) => setCategory( e.target.value ) } />
                     </div>
                     <HorizontalCards data={ trending } />
                 </div>
             </div>
         </div>
-    ) : <h1>Loading</h1>
+    ) : <div className='w-full h-full'> <Loader /> </div>
 }
 
 export default Home;
