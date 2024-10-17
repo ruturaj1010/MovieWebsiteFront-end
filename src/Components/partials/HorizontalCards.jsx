@@ -1,14 +1,24 @@
 import React from 'react'
+import queryImg from '/queryImg.png'
 
-const HorizontalCards = () => {
+const HorizontalCards = ( { data } ) => {
     return (
-        <div className='w-full h-[40vh] pl-4 py-2'>
-            <h1 className='text-2xl font-semibold mb-2'>Trending</h1>
 
-            <div className='w-full h-[88%] flex justify-start items-center gap-3 flex-wrap overflow-y-auto'>
-                <div className='w-48 h-full bg-red-600'></div>
-            </div>
+        <div className='w-full h-[42vh] flex justify-start items-center gap-3 flex-nowrap scrollhide overflow-y-hidden overflow-x-auto pb-2'>
+            { data.map( ( item, index ) => {
+                return <div key={ index } className='w-48 h-[35vh] bg-zinc-800 hover:bg-zinc-700 rounded-md shadow-lg shrink-0 p-1'>
+                    <img className='w-full h-28 mb-2 object-cover object-center rounded-md' src={ `${item.backdrop_path || item.profile_path
+                        ? `https://image.tmdb.org/t/p/original/${item.backdrop_path || item.profile_path}`
+                        : queryImg
+                        }` } alt="" />
+                    <div className='w-full h-28 flex flex-col justify-between items-start px-1'>
+                        <h1 className='text-sm text-wrap font-semibold text-purple-400' >{ item.name || item.original_name || item.title || item.original_title }</h1>
+                        <p className='text-sm text-wrap' >{ item.overview.slice( 0, 50 ) } ...<span className='text-blue-400 hover:underline cursor-pointer'>more</span> </p>
+                    </div>
+                </div>
+            } ) }
         </div>
+
     )
 }
 

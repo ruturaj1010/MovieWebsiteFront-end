@@ -26,3 +26,12 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #656363;
 }
+
+/* .scrollhide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollhide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+} */
