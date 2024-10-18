@@ -9,8 +9,8 @@ const App = () => {
   const scroll = new LocomotiveScroll();
 
   return (
-    <div className="w-screen min-h-screen bg-[#1F1E24] text-white ">
-
+    <div className="max-w-screen min-h-screen bg-[#1F1E24] text-white ">
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/trending" element={ <Trending /> } />

@@ -1,27 +1,27 @@
 import React from 'react'
 
-const Dropdown = ( {title , options , catfunc } ) => {
+const Dropdown = ( {title , options , func } ) => {
     return (
-        <div className="select relative w-64">
+        <div className="select relative w-52">
             <select
                 className="outline-none bg-zinc-700 text-white w-full py-1 px-3 rounded-lg shadow-lg appearance-none cursor-pointer focus:ring focus:ring-blue-500 transition-all"
                 defaultValue="0"
-                onChange={(e)=>catfunc(e)}
+                onChange={(e)=>func(e)}
                 name="format"
                 id="format"
             >
-                <option className="bg-zinc-600 hover:bg-zinc-700" value="0">
+                <option className=" bg-zinc-600 hover:bg-zinc-700" value="0">
                     {title.toUpperCase()}
                 </option>
                 {options.map((o , i)=>{
-                    return <option key={i} className="bg-zinc-600 hover:bg-zinc-700" value={o}>
+                    return <option key={i} className=" bg-zinc-600 hover:bg-zinc-700 " value={o}>
                         {o.toUpperCase()}
                     </option>
                 })}
             </select>
 
             
-            <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+            <span className="absolute z-50 inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                 <svg
                     className="h-5 w-5 text-gray-400"
                     xmlns="http://www.w3.org/2000/svg"

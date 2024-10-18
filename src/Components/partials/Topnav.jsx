@@ -25,17 +25,17 @@ const Topnav = () => {
 
     return (
 
-        <div className="w-full h-[9vh] flex justify-center items-center gap-4 p-4 relative">
+        <div className="w-full flex justify-center items-center gap-4 p-4 relative">
             <i className=" text-xl text-zinc-300 ri-search-line"></i>
-            <input type="text"
+            <input type="text" name="searchQuery"
                 value={ query }
                 onChange={ ( e ) => setQuery( e.target.value ) }
-                className="w-[50%] px-3 py-1 text-lg text-zinc-300 outline-none border-none bg-transparent"
+                className="w-[50%] px-3 py-1 text-lg text-zinc-300 outline-none border-none bg-transparent placeholder-zinc-300 "
                 placeholder="search anything here"
             />
             <div className="w-5">{ query.length > 0 && <i onClick={ () => setQuery( "" ) } className="text-xl hover:cursor-pointer text-zinc-300 ri-close-large-fill"></i> }</div>
 
-            <div className="w-[55%] max-h-[52.7vh]  absolute top-[95%] bg-zinc-300 text-black overflow-y-auto">
+            <div className="w-[55%] max-h-[49vh]  absolute top-[96%] bg-zinc-300 text-black overflow-y-auto">
 
                 { searches && searches.map( ( item, index ) => {
                     return <Link key={ item.id } className="w-full px-10 py-3 font-medium duration-300 text-zinc-900 hover:text-zinc-700 bg-zinc-300 hover:bg-zinc-100 flex justify-start items-center gap-4 border-b border-zinc-500">
