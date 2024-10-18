@@ -9,7 +9,7 @@ import Loader from './Loader';
 
 const Home = () => {
 
-    document.title = "MovieApp | Home";
+    document.title = "Movies+More | Home";
 
     const [wallpaper, setWallpaper] = useState( "" )
     const [trending, setTrending] = useState( "" )
