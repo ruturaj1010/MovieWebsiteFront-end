@@ -5,6 +5,8 @@ import LocomotiveScroll from 'locomotive-scroll'
 import Trending from "./Components/Trending";
 import Popular from "./Components/Popular";
 import Movies from "./Components/Movie";
+import TVShows from "./Components/TVShows";
+import People from "./Components/People";
 
 const App = () => {
   
@@ -18,6 +20,8 @@ const App = () => {
         <Route path="/trending" element={ <Trending /> } />
         <Route path="/popular" element={ <Popular /> } />
         <Route path="/movies" element={ <Movies /> } />
+        <Route path="/tvshows" element={ <TVShows /> } />
+        <Route path="/people" element={ <People /> } />
       </Routes>
       
     </div>
