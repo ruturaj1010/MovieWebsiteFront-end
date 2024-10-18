@@ -55,9 +55,10 @@ const Trending = () => {
   return (
     <div className="w-full h-full relative">
 
-      <div className="w-full px-10 sticky top-0 left-0 flex justify-between items-center bg-purple-500">
+      <div className="w-full px-10 z-10 sticky top-0 left-0 flex justify-between items-center bg-purple-500">
         <h1 className="w-1/6 text-2xl font-semibold tracking-wide select-none">
-          <i onClick={ () => navigate( -1 ) } className="text-purple-300 mr-2 cursor-pointer ri-arrow-left-line"></i> Trending
+          <i onClick={ () => navigate( -1 ) } className="text-purple-300 mr-2 cursor-pointer ri-arrow-left-line"></i> 
+          Trending  <small className="text-sm text-zinc-300">({ category.toUpperCase() })</small>
         </h1>
 
         <div className="w-5/6 flex items-center justify-center gap-4">
