@@ -10,7 +10,7 @@ const Dropdown = ( {title , options , func } ) => {
                 name="format"
                 id="format"
             >
-                <option className=" bg-zinc-600 hover:bg-zinc-700" value="0">
+                <option className=" bg-zinc-600 hover:bg-zinc-700" defaultValue="1">
                     {title.toUpperCase()}
                 </option>
                 {options.map((o , i)=>{

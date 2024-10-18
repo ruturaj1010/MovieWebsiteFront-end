@@ -16,7 +16,7 @@ const Trending = () => {
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
   
-  document.title = `Movies+More | Trending ${category}`;
+  document.title = "Movies+More | Trending "+ category.toUpperCase();
 
   const getTrending = async () => {
     try {

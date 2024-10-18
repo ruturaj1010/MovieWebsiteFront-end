@@ -4,6 +4,7 @@ import Home from "./Components/Home";
 import LocomotiveScroll from 'locomotive-scroll'
 import Trending from "./Components/Trending";
 import Popular from "./Components/Popular";
+import Movies from "./Components/Movie";
 
 const App = () => {
   
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/trending" element={ <Trending /> } />
         <Route path="/popular" element={ <Popular /> } />
+        <Route path="/movies" element={ <Movies /> } />
       </Routes>
       
     </div>
