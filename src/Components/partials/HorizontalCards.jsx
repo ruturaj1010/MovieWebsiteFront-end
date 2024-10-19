@@ -7,7 +7,7 @@ const HorizontalCards = ( { data, title } ) => {
 
         <div className='w-full h-[42vh] flex justify-start items-center gap-3 flex-nowrap scrollhide overflow-y-hidden overflow-x-auto pb-2'>
             { data.map( ( item, index ) => {
-                return <Link to={`${item.media_type || title }/details/:${item.id}`} key={ index } className='w-48 h-[40vh] bg-zinc-800 hover:bg-zinc-700 rounded-md shadow-lg shrink-0 p-1'>
+                return <Link to={`${item.media_type || title }/details/${item.id}`} key={ index } className='w-48 h-[40vh] bg-zinc-800 hover:bg-zinc-700 rounded-md shadow-lg shrink-0 p-1'>
                     <img className='w-full h-36 mb-2 object-cover object-center rounded-md' src={ `${ item.poster_path || item.backdrop_path || item.profile_path
                         ? `https://image.tmdb.org/t/p/original/${ item.poster_path || item.backdrop_path || item.profile_path}`
                         : queryImg

@@ -10,7 +10,7 @@ const Cards = ( { data, title } ) => {
     return (
         <div className='w-full h-full flex flex-wrap justify-start items-center gap-14 p-5'>
             { data.map( ( item, index ) => {
-                return <Link to={`/${ item.media_type || title }/details/:${item.id}`} key={ index } className='w-48 h-80 relative text-lg '>
+                return <Link to={`/${ item.media_type || title }/details/${item.id}`} key={ index } className='w-48 h-80 relative text-lg '>
                     <img className='w-full h-64 object-cover object-center mb-5 border-2 border-zinc-800 shadow-[5px_7px_12px_3px_rgba(10 ,10 , 10 , 0.5 )]'
                         src={ `${item.poster_path || item.backdrop_path || item.profile_path
                             ? `https://image.tmdb.org/t/p/original/${item.poster_path || item.backdrop_path || item.profile_path}`

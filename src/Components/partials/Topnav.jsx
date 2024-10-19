@@ -38,7 +38,7 @@ const Topnav = () => {
             <div className="w-[55%] max-h-[49vh]  absolute top-[96%] bg-zinc-300 text-black overflow-y-auto">
 
                 { searches && searches.map( ( item, index ) => {
-                    return <Link key={ item.id } className="w-full px-10 py-3 font-medium duration-300 text-zinc-900 hover:text-zinc-700 bg-zinc-300 hover:bg-zinc-100 flex justify-start items-center gap-4 border-b border-zinc-500">
+                    return <Link to={`/${item.media_type}/details/${item.id}`} key={ item.id } className="w-full px-10 py-3 font-medium duration-300 text-zinc-900 hover:text-zinc-700 bg-zinc-300 hover:bg-zinc-100 flex justify-start items-center gap-4 border-b border-zinc-500">
                         <img
                             className="w-[4vw] h-[4vw] object-center object-cover rounded-md"
                             src={ item.backdrop_path || item.profile_path || item.poster_path ?
