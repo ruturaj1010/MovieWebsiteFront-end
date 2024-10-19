@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import queryImg from '/queryImg.png'
 
 const Cards = ( { data } ) => {
-    console.log( data );
+
     return (
         <div className='w-full h-full flex flex-wrap justify-start items-center gap-14 p-5'>
             { data.map( ( item, index ) => {
@@ -13,7 +13,7 @@ const Cards = ( { data } ) => {
                             ? `https://image.tmdb.org/t/p/original/${item.poster_path || item.backdrop_path || item.profile_path}`
                             : queryImg
                             }` } alt="" />
-                    { item.vote_average && <span className='absolute top-1 left-1 text-xs text-white bg-black opacity-70 shadow-[2px_2px_4px_rgba(0,0,0,0.5)]'>Rating: { item.vote_average }</span> }
+                    { item.vote_average ?<span className='absolute top-1 left-1 text-xs text-white bg-black opacity-70 shadow-[2px_2px_4px_rgba(0,0,0,0.5)]'>Rating: { item.vote_average }</span> : null }
                     { item.name || item.original_name || item.title || item.original_title }
                 </Link>
             } ) }
