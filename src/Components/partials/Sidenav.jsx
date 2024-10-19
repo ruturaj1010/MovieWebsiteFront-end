@@ -22,11 +22,11 @@ const Sidenav = () => {
                     <i className=" mr-1 ri-bard-fill"></i> Popular
                 </Link>
 
-                <Link to={"/movies"} className="w-full p-2 rounded-md transition duration-300 hover:font-semibold hover:text-white hover:bg-[#6556CD]">
+                <Link to={"/movie"} className="w-full p-2 rounded-md transition duration-300 hover:font-semibold hover:text-white hover:bg-[#6556CD]">
                     <i className=" mr-1 ri-movie-fill"></i> Movies
                 </Link>
 
-                <Link to={"/tvshows"} className="w-full p-2 rounded-md transition duration-300 hover:font-semibold hover:text-white hover:bg-[#6556CD]">
+                <Link to={"/tv"} className="w-full p-2 rounded-md transition duration-300 hover:font-semibold hover:text-white hover:bg-[#6556CD]">
                     <i className=" mr-1 ri-tv-fill"></i> TV Shows
                 </Link>
 

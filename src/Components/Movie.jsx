@@ -62,7 +62,7 @@ const Movie = () => {
 
                 <div className="w-5/6 flex items-center justify-center gap-4">
                     <Topnav />
-                    <Dropdown title="Movie" options={ ["now_playing", "popular", "top_rated", "upcoming"] } func={ ( e ) => setCategory( e.target.value ) } />
+                    <Dropdown title="Movie" options={ [ "popular", "top_rated", "upcoming", "now_playing" ] } func={ ( e ) => setCategory( e.target.value ) } />
                 </div>
             </div>
 
@@ -74,7 +74,7 @@ const Movie = () => {
                         hasMore={ hasMore }
                         loader={ loading ? <Loader /> : "" }
                     >
-                        <Cards data={ movies } />
+                        <Cards data={ movies } title="movie" />
                     </InfiniteScroll>
                 ) : (
                     <div className="w-full h-[90vh] flex items-center justify-center">

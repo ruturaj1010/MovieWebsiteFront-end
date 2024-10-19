@@ -72,7 +72,7 @@ const People = () => {
                         hasMore={ hasMore }
                         loader={ loading ? <Loader /> : "" }
                     >
-                        <Cards data={ people } />
+                        <Cards data={ people } title="person" />
                     </InfiniteScroll>
                 ) : (
                     <div className="w-full h-[90vh] flex items-center justify-center">

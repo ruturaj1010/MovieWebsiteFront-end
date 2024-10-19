@@ -63,7 +63,7 @@ const Trending = () => {
 
         <div className="w-5/6 flex items-center justify-center gap-4">
           <Topnav />
-          <Dropdown title="trending" options={ ["all", "movie", "tv"] } func={ ( e ) => setCategory( e.target.value ) } />
+          <Dropdown title="trending" options={ [ "movie", "tv", "all" ] } func={ ( e ) => setCategory( e.target.value ) } />
           <Dropdown title="duration" options={ ["week", "day"] } func={ ( e ) => setDuration( e.target.value ) } />
         </div>
       </div>
@@ -74,9 +74,9 @@ const Trending = () => {
             dataLength={ trending.length }
             next={ getTrending }
             hasMore={ hasMore }
-            loader={ <Loader /> }
+            loader={ loading ? <Loader /> : null}
           >
-            <Cards data={ trending } />
+            <Cards data={ trending } title={ category } />
           </InfiniteScroll>
         ) : (
           <div className="w-full h-[90vh] flex items-center justify-center">

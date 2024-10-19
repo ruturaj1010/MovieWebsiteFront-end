@@ -62,7 +62,7 @@ const Popular = () => {
 
                 <div className="w-5/6 flex items-center justify-center gap-4">
                     <Topnav />
-                    <Dropdown title="Popular" options={ ["movie", "tv"] } func={ ( e ) => setCategory( e.target.value ) } />
+                    <Dropdown title="Popular" options={ [ "tv", "movie"] } func={ ( e ) => setCategory( e.target.value ) } />
                 </div>
             </div>
 
@@ -74,7 +74,7 @@ const Popular = () => {
                         hasMore={ hasMore }
                         loader={ loading ? <Loader /> : "" }
                     >
-                        <Cards data={ popular } />
+                        <Cards data={ popular } title={ category } />
                     </InfiniteScroll>
                 ) : (
                     <div className="w-full h-[90vh] flex items-center justify-center">

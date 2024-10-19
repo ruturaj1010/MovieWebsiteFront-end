@@ -62,7 +62,7 @@ const TVShows = () => {
 
                 <div className="w-5/6 flex items-center justify-center gap-4">
                     <Topnav />
-                    <Dropdown title="TV Shows" options={ ["airing_today", "on_the_air", "popular", "top_rated"] } func={ ( e ) => setCategory( e.target.value ) } />
+                    <Dropdown title="TV Shows" options={ [ "on_the_air", "popular", "top_rated", "airing_today"] } func={ ( e ) => setCategory( e.target.value ) } />
                 </div>
             </div>
 
@@ -74,7 +74,7 @@ const TVShows = () => {
                         hasMore={ hasMore }
                         loader={ loading ? <Loader /> : "" }
                     >
-                        <Cards data={ tvShows } />
+                        <Cards data={ tvShows } title="tvshows" />
                     </InfiniteScroll>
                 ) : (
                     <div className="w-full h-[90vh] flex items-center justify-center">

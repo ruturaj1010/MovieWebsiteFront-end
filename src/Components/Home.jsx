@@ -17,7 +17,7 @@ const Home = () => {
 
     const getWallpaper = async () => {
         try {
-            const { data } = await axios.get( `/trending/all/day` )
+            const { data } = await axios.get( `/trending/movie/day` )
             // console.log( data.results );
             let randomData = await data.results[Math.floor( Math.random() * ( data.results.length ) )]
             // console.log( randomData );
@@ -59,9 +59,9 @@ const Home = () => {
                 <div className='w-full h-[54vh] p-4 '>
                     <div className='w-full flex justify-between items-center pb-2'>
                         <h1 className='text-2xl font-semibold '>Trending</h1>
-                        <Dropdown title={ "Filter" } options={ ["all", "tv", "movie"] } func={ ( e ) => setCategory( e.target.value ) } />
+                        <Dropdown title={ "Filter" } options={ [ "tv", "movie", "all" ] } func={ ( e ) => setCategory( e.target.value ) } />
                     </div>
-                    <HorizontalCards data={ trending } />
+                    <HorizontalCards data={ trending } title= {category } />
                 </div>
             </div>
         </div>
