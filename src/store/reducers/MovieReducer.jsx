@@ -5,7 +5,7 @@ const initialState = {
 }
 
 const movieReducer = createSlice( {
-    name: "movie",
+    name: "movieinfo",
     initialState,
     reducers: {
         loadmovies: ( state, action ) => {

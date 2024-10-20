@@ -5,7 +5,7 @@ const initialState = {
 }
 
 export const peopleReducer = createSlice( {
-    name: "people",
+    name: "peopleinfo",
 
     initialState,
 

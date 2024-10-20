@@ -12,7 +12,7 @@ export const asyncLoadMovies = ( id ) => async ( dispatch, getState ) => {
         const watchproviders = await axios.get( `movie/${id}/watch/providers` );
 
         let theUltimateData = {
-            Detail: detail.data,
+            detail: detail.data,
             externalids: externalids.data,
             recommendations: recommendations.data.results,
             similar: similar.data.results,
