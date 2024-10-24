@@ -104,7 +104,7 @@ const MovieDetails = () => {
             <h1 className="text-lg font-semibold mt-1">Languages</h1>
             <p className="w-[90%] text-sm text-justify font-light text-wrap mb-2">{ movieinfo.translations.map( item => item ).join( ", " ) } </p>
 
-            <Link to={ `${pathname}/trailer` } className="px-3 py-2 bg-purple-700 text-zinc-50 font-semibold rounded-md" >
+            <Link to={ `${pathname}/trailer` } className="px-3 py-2 mt-2 bg-purple-700 text-zinc-50 font-semibold rounded-md" >
               <i className="mr-2 ri-play-large-fill"></i>
               Watch Trailer
             </Link>
