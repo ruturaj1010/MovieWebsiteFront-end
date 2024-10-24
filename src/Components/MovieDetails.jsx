@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import { Link, Outlet, useLocation, useNavigate, useParams } from "react-router-dom";
 import asyncLoadMovies, { removemovies } from "../store/actions/movieactions";
 import HorizontalCards from "../Components/partials/HorizontalCards";
 import queryImg from "/queryImg.png";
@@ -19,7 +19,7 @@ const MovieDetails = () => {
     return () => {
       dispatch( removemovies() );
     };
-  }, [ id ] );
+  }, [id] );
 
   return movieinfo ? (
     <div
@@ -32,7 +32,7 @@ const MovieDetails = () => {
         backgroundPosition: "center top",
         backgroundRepeat: "no-repeat",
       } }
-      className="max-w-screen min-h-screen mx-auto "
+      className="screen max-w-screen min-h-screen mx-auto "
     >
       <nav className="max-w-screen-xl h-[8vh] mx-auto sm:px-0 px-4 text-2xl flex items-center gap-14">
         <Link
@@ -174,13 +174,13 @@ const MovieDetails = () => {
           ) }
         </div>
       }
-      
+
       <div className="max-w-screen-xl mx-auto py-5">
         <span className="inline-block w-full h-[2px] bg-zinc-500"></span>
         <h1 className="text-xl font-semibold tracking-wide my-2" >Recommmendations and Similar stuff</h1>
         <HorizontalCards data={ movieinfo.recommendations.length > 0 ? movieinfo.recommendations : movieinfo.similar } title="movie" />
+        <Outlet />
       </div>
-
     </div>
   ) : (
     <div className="w-screen h-screen flex justify-center items-center">
