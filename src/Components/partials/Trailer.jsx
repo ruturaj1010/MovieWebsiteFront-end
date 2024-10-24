@@ -22,8 +22,9 @@ const Trailer = () => {
             ></Link>
             { ytvideo !== undefined ? 
                 <ReactPlayer url={ `https://www.youtube.com/watch?v=${ytvideo}` } controls={ true } playing={ true } height="85%" width="90%" /> 
-                : <NotFound />
+                : <NotFound bgBlack={false} />
             }
+
 
         </div>
     )

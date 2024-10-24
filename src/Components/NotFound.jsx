@@ -1,8 +1,9 @@
 import React from "react";
 
-const Loader = () => {
+const Loader = ( { bgBlack = true } ) => {
+
     return (
-        <div className="w-full h-full flex justify-center items-center text-3xl text-gray-400 ">
+        <div className={`w-screen h-screen  ${ bgBlack ? 'bg-black' : ''} flex justify-center items-center text-3xl text-gray-400 `}>
             <img className="w-60" src="/404NF.gif" alt="Loading..." />
         </div>
     );
