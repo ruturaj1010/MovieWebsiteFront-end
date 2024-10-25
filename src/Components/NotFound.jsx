@@ -1,6 +1,6 @@
 import React from "react";
 
-const Loader = ( { bgBlack = true } ) => {
+const Loader = ( { bgBlack = false } ) => {
 
     return (
         <div className={`w-screen h-screen  ${ bgBlack ? 'bg-black' : ''} flex justify-center items-center text-3xl text-gray-400 `}>

@@ -1,15 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    tvinfo : null
+    info : null
 }
 
-export const peopleReducer = createSlice( {
+export const tvReducer = createSlice( {
     name: "tvinfo",
     initialState,
     reducers: {
+        
         loadTv: ( state, action ) => {
-            state.tvinfo = action.payload;
+            state.info = action.payload;
         },
 
         removeTv: ( state, action ) => {
@@ -19,6 +20,6 @@ export const peopleReducer = createSlice( {
     }
 } )
 
-export const { loadTv, removeTv } = peopleReducer.actions;
+export const { loadTv, removeTv } = tvReducer.actions;
 
-export default peopleReducer.reducer;
+export default tvReducer.reducer;

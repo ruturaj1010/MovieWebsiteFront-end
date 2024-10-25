@@ -74,7 +74,7 @@ const TVShows = () => {
                         hasMore={ hasMore }
                         loader={ loading ? <Loader /> : "" }
                     >
-                        <Cards data={ tvShows } title="tvshows" />
+                        <Cards data={ tvShows } title="tv" />
                     </InfiniteScroll>
                 ) : (
                     <div className="w-full h-[90vh] flex items-center justify-center">

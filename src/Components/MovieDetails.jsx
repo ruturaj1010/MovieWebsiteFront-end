@@ -10,7 +10,7 @@ const MovieDetails = () => {
   const { id } = useParams();
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  const { movieinfo } = useSelector( ( state ) => state.Movie );
+  const { info } = useSelector( ( state ) => state.Movie );
   const dispatch = useDispatch();
 
   useEffect( () => {
@@ -21,11 +21,11 @@ const MovieDetails = () => {
     };
   }, [id] );
 
-  return movieinfo ? (
+  return info ? (
     <div
       style={ {
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url(${movieinfo.detail.backdrop_path
-          ? `https://image.tmdb.org/t/p/original/${movieinfo.detail.backdrop_path}`
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url(${info.detail.backdrop_path
+          ? `https://image.tmdb.org/t/p/original/${info.detail.backdrop_path}`
           : queryImg
           })`,
         backgroundSize: "cover",
@@ -40,21 +40,21 @@ const MovieDetails = () => {
           className="hover:text-purple-600 mr-2 text-3xl cursor-pointer ri-arrow-left-line"
         ></Link>
         <a
-          href={ movieinfo.detail.homepage }
+          href={ info.detail.homepage }
           target="_blank"
           className=" hover:scale-105"
         >
           <i className=" hover:text-purple-300 ri-external-link-fill"></i>
         </a>
         <a
-          href={ `https://www.wikidata.org/wiki/${movieinfo.externalids.wikidata_id}` }
+          href={ `https://www.wikidata.org/wiki/${info.externalids.wikidata_id}` }
           target="_blank"
           className=" hover:scale-105"
         >
           <i className=" hover:text-purple-300 ri-earth-fill"></i>
         </a>
         <a
-          href={ `https://www.imdb.com/title/${movieinfo.externalids.imdb_id}/` }
+          href={ `https://www.imdb.com/title/${info.externalids.imdb_id}/` }
           target="_blank"
           className="hover:scale-105 hover:text-purple-300 "
         >
@@ -65,8 +65,8 @@ const MovieDetails = () => {
       <div className=" max-w-screen-xl mx-auto mt-5 flex">
         <img
           className="h-[50vh] mb-2 object-cover object-center rounded-md"
-          src={ `${movieinfo.detail.poster_path || movieinfo.detail.backdrop_path
-            ? `https://image.tmdb.org/t/p/original/${movieinfo.detail.poster_path || movieinfo.detail.backdrop_path
+          src={ `${info.detail.poster_path || info.detail.backdrop_path
+            ? `https://image.tmdb.org/t/p/original/${info.detail.poster_path || info.detail.backdrop_path
             }`
             : queryImg
             }` }
@@ -75,34 +75,34 @@ const MovieDetails = () => {
 
         <div className="content ml-[5%] ">
           <h1 className="text-4xl font-semibold tracking-wide ">
-            { movieinfo.detail.name ||
-              movieinfo.detail.original_name ||
-              movieinfo.detail.title ||
-              movieinfo.detail.original_title }
+            { info.detail.name ||
+              info.detail.original_name ||
+              info.detail.title ||
+              info.detail.original_title }
 
             <small className="px-3 text-xl">
-              ({ movieinfo.detail.release_date.split( "-" )[0] })
+              ({ info.detail.release_date.split( "-" )[0] })
             </small>
           </h1>
 
           <div className="mt-2 text-sm text-zinc-50 font-light flex flex-col items-start">
             <p className="flex flex-wrap items-center gap-x-7">
-              <span>Released on : { movieinfo.detail.release_date }</span>
-              <span>Runtime : { movieinfo.detail.runtime } mins</span>
-              <span>{ movieinfo.detail.genres.map( ( item, index ) => item.name ).join( ", " ) }</span>
+              <span>Released on : { info.detail.release_date }</span>
+              <span>Runtime : { info.detail.runtime } mins</span>
+              <span>{ info.detail.genres.map( ( item, index ) => item.name ).join( ", " ) }</span>
             </p>
 
             <span>
-              { `Votes out of 10 : ${movieinfo.detail.vote_average} (${movieinfo.detail.vote_count})` }
+              { `Votes out of 10 : ${info.detail.vote_average} (${info.detail.vote_count})` }
             </span>
 
-            <p className="text-base font-medium italic my-1">{ movieinfo.detail.tagline } </p>
+            <p className="text-base font-medium italic my-1">{ info.detail.tagline } </p>
 
             <h1 className="text-lg font-semibold mt-1">Overview</h1>
-            <p className="w-[90%] text-base text-justify font-light text-wrap mb-2">{ movieinfo.detail.overview } </p>
+            <p className="w-[90%] text-base text-justify font-light text-wrap mb-2">{ info.detail.overview } </p>
 
             <h1 className="text-lg font-semibold mt-1">Languages</h1>
-            <p className="w-[90%] text-sm text-justify font-light text-wrap mb-2">{ movieinfo.translations.map( item => item ).join( ", " ) } </p>
+            <p className="w-[90%] text-sm text-justify font-light text-wrap mb-2">{ info.translations.map( item => item ).join( ", " ) } </p>
 
             <Link to={ `${pathname}/trailer` } className="px-3 py-2 mt-2 bg-purple-700 text-zinc-50 font-semibold rounded-md" >
               <i className="mr-2 ri-play-large-fill"></i>
@@ -114,12 +114,12 @@ const MovieDetails = () => {
 
       </div>
 
-      { movieinfo.watchProviders.results?.AT &&
+      { info.watchProviders.results?.AT &&
         <div className="max-w-screen-xl mx-auto mt-10 flex flex-col gap-5 ">
-          { movieinfo.watchProviders.results && (
+          { info.watchProviders.results && (
             <div className="w-[60%] flex flex-wrap items-center gap-5">
               <h1 className="text-lg font-medium">Available Platforms : </h1>
-              { movieinfo.watchProviders.results?.AT?.flatrate?.map(
+              { info.watchProviders.results?.AT?.flatrate?.map(
                 ( item, index ) => {
                   return (
                     <img
@@ -135,12 +135,12 @@ const MovieDetails = () => {
             </div>
           ) }
 
-          { movieinfo.watchProviders.results && (
+          { info.watchProviders.results && (
             <div className="w-[60%] flex flex-wrap items-center gap-5">
               <h1 className="text-lg font-medium">
                 Available platforms to Buy :{ " " }
               </h1>
-              { movieinfo.watchProviders.results?.AT?.buy?.map( ( item, index ) => {
+              { info.watchProviders.results?.AT?.buy?.map( ( item, index ) => {
                 return (
                   <img
                     key={ index }
@@ -154,12 +154,12 @@ const MovieDetails = () => {
             </div>
           ) }
 
-          { movieinfo.watchProviders.results && (
+          { info.watchProviders.results && (
             <div className="w-[60%] flex flex-wrap items-center gap-5">
               <h1 className="text-lg font-medium">
                 Available Platforms in Rent :{ " " }
               </h1>
-              { movieinfo.watchProviders.results?.AT?.rent?.map( ( item, index ) => {
+              { info.watchProviders.results?.AT?.rent?.map( ( item, index ) => {
                 return (
                   <img
                     key={ index }
@@ -178,7 +178,7 @@ const MovieDetails = () => {
       <div className="max-w-screen-xl mx-auto py-5">
         <span className="inline-block w-full h-[2px] bg-zinc-500"></span>
         <h1 className="text-xl font-semibold tracking-wide my-2" >Recommmendations and Similar stuff</h1>
-        <HorizontalCards data={ movieinfo.recommendations.length > 0 ? movieinfo.recommendations : movieinfo.similar } title="movie" />
+        <HorizontalCards data={ info.recommendations.length > 0 ? info.recommendations : info.similar } title="movie" />
         <Outlet />
       </div>
     </div>

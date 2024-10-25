@@ -8,7 +8,7 @@ export const asyncLoadMovies = ( id ) => async ( dispatch, getState ) => {
         const externalids = await axios.get( `/movie/${id}/external_ids` );
         const recommendations = await axios.get( `/movie/${id}/recommendations` );
         const similar = await axios.get( `/movie/${id}/similar` );
-        const translations = await axios.get( `movie/${id}/translations` );
+        const translations = await axios.get( `/movie/${id}/translations` );
         const videos = await axios.get( `/movie/${id}/videos` );
         const watchproviders = await axios.get( `/movie/${id}/watch/providers` );
 
