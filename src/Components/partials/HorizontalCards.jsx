@@ -6,7 +6,7 @@ const HorizontalCards = ( { data, title } ) => {
 
     return (
 
-        <div className='w-full h-[54vh] flex justify-start items-center gap-3 flex-nowrap scrollhide overflow-y-hidden overflow-x-auto pb-4'>
+        <div className='w-full h-[50vh] flex justify-start items-center gap-3 flex-nowrap scrollhide overflow-y-hidden overflow-x-auto'>
             { data.length > 0 ? data.map( ( item, index ) => {
                 return <Link to={`/${item.media_type || title }/details/${item.id}`} key={ index } className='w-48 h-72 bg-zinc-800 hover:bg-zinc-700 rounded-md shadow-lg shrink-0 p-1'>
                     <img className='w-full h-36 mb-2 object-cover object-center rounded-md' src={ `${ item.poster_path || item.backdrop_path || item.profile_path

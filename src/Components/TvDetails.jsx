@@ -175,11 +175,11 @@ const TvDetails = () => {
 
       <div className="max-w-screen-xl mx-auto py-5">
         <span className="inline-block w-full h-[2px] bg-zinc-500"></span>
-        <h1 className="text-xl font-semibold tracking-wide my-2" >Seasons</h1>
+        <h1 className="text-xl font-semibold tracking-wide  mt-4" >Seasons</h1>
         <HorizontalCards data={ info.detail?.seasons?.length > 0 ? info.detail.seasons : info.similar } title="tv" />
 
         <span className="inline-block w-full h-[2px] bg-zinc-500 mt-10"></span>
-        <h1 className="text-xl font-semibold tracking-wide my-2" >Recommmendations and Similar stuff</h1>
+        <h1 className="text-xl font-semibold tracking-wide mt-4" >Recommmendations and Similar stuff</h1>
         <HorizontalCards data={ info.recommendations.length > 0 ? info.recommendations : info.similar } title="tv" />
         <Outlet />
       </div>

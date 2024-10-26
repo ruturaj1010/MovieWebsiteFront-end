@@ -176,7 +176,7 @@ const MovieDetails = () => {
       }
 
       <div className="max-w-screen-xl mx-auto py-5">
-        <span className="inline-block w-full h-[2px] bg-zinc-500"></span>
+        <span className="inline-block w-full h-[1px] bg-zinc-500"></span>
         <h1 className="text-xl font-semibold tracking-wide my-2" >Recommmendations and Similar stuff</h1>
         <HorizontalCards data={ info.recommendations.length > 0 ? info.recommendations : info.similar } title="movie" />
         <Outlet />

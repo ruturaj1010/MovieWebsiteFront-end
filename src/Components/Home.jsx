@@ -56,8 +56,8 @@ const Home = () => {
                 <Topnav />
                 <Header data={ wallpaper } />
 
-                <div className='w-full h-[54vh] p-4 '>
-                    <div className='w-full flex justify-between items-center pb-2'>
+                <div className='w-full h-[58vh] p-4 mb-5'>
+                    <div className='w-full flex justify-between items-center '>
                         <h1 className='text-2xl font-semibold '>Trending</h1>
                         <Dropdown title={ "Filter" } options={ [ "tv", "movie", "all" ] } func={ ( e ) => setCategory( e.target.value ) } />
                     </div>
