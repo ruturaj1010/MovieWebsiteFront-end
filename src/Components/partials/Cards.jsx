@@ -4,8 +4,8 @@ import queryImg from '/queryImg.png'
 
 const Cards = ( { data, title } ) => {
 
-    console.log( title );
-    console.log(data);
+    // console.log( title );
+    // console.log(data);
 
     return (
         <div className='w-full h-full flex flex-wrap justify-start items-center gap-14 p-5'>

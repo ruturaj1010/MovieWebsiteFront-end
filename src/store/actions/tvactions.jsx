@@ -23,7 +23,7 @@ export const asyncLoadTv = ( id ) => async ( dispatch, getState ) => {
         }
         
         dispatch( loadTv( theUltimateData ) )
-        console.log( theUltimateData );
+        // console.log( theUltimateData );
 
     } catch ( error ) {
         console.log( "Error :", error );

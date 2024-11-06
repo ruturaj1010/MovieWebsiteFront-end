@@ -20,7 +20,7 @@ export const asyncLoadPeople = ( id ) => async ( dispatch, getState ) => {
         }
 
         dispatch( loadPeople( theUltimateData ) )
-        console.log( theUltimateData );
+        // console.log( theUltimateData );
 
     } catch ( error ) {
         console.log( error );
