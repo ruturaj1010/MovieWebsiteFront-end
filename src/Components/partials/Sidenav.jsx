@@ -1,12 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Sidenav = () => {
+const Sidenav = ({ onClickHam, close }) => {
     return (
-        <div className="w-full h-screen p-5">
+        <div className="w-full h-screen p-5 relative">
             <h1 className="text-purple-400 text-2xl select-none">
                 <i className="ri-movie-2-fill"></i>
                 <span className="ml-1 font-bold italic">Movies + More</span>
+                <i
+                    onClick={onClickHam}
+                    className={`${close ? "hidden" : "inline-block"} xl:hidden text-white text-2xl font-semibold absolute right-2 top-5 ri-close-large-line`}
+                ></i>
             </h1>
 
             <nav className="flex flex-col items-start gap-2 text-lg text-zinc-300">
@@ -14,23 +18,38 @@ const Sidenav = () => {
                     New Feeds
                 </h1>
 
-                <Link to={"/trending"} className="w-full p-2 rounded-md transition duration-300 hover:font-semibold hover:text-white hover:bg-[#6556CD]">
+                <Link
+                    to={"/trending"}
+                    className="w-full p-2 rounded-md transition duration-300 hover:font-semibold hover:text-white hover:bg-[#6556CD]"
+                >
                     <i className=" mr-1 ri-fire-fill"></i> Trending
                 </Link>
 
-                <Link to={"/popular"} className="w-full p-2 rounded-md transition duration-300 hover:font-semibold hover:text-white hover:bg-[#6556CD]">
+                <Link
+                    to={"/popular"}
+                    className="w-full p-2 rounded-md transition duration-300 hover:font-semibold hover:text-white hover:bg-[#6556CD]"
+                >
                     <i className=" mr-1 ri-bard-fill"></i> Popular
                 </Link>
 
-                <Link to={"/movie"} className="w-full p-2 rounded-md transition duration-300 hover:font-semibold hover:text-white hover:bg-[#6556CD]">
+                <Link
+                    to={"/movie"}
+                    className="w-full p-2 rounded-md transition duration-300 hover:font-semibold hover:text-white hover:bg-[#6556CD]"
+                >
                     <i className=" mr-1 ri-movie-fill"></i> Movies
                 </Link>
 
-                <Link to={"/tv"} className="w-full p-2 rounded-md transition duration-300 hover:font-semibold hover:text-white hover:bg-[#6556CD]">
+                <Link
+                    to={"/tv"}
+                    className="w-full p-2 rounded-md transition duration-300 hover:font-semibold hover:text-white hover:bg-[#6556CD]"
+                >
                     <i className=" mr-1 ri-tv-fill"></i> TV Shows
                 </Link>
 
-                <Link to={"/person"} className="w-full p-2 rounded-md transition duration-300 hover:font-semibold hover:text-white hover:bg-[#6556CD]">
+                <Link
+                    to={"/person"}
+                    className="w-full p-2 rounded-md transition duration-300 hover:font-semibold hover:text-white hover:bg-[#6556CD]"
+                >
                     <i className=" mr-1 text-xl ri-user-heart-fill"></i> People
                 </Link>
             </nav>
@@ -41,13 +60,13 @@ const Sidenav = () => {
                 </h1>
 
                 <Link className="w-full p-2 rounded-md transition duration-300 hover:font-semibold hover:text-white hover:bg-[#6556CD]">
-                    <i className=" mr-1 ri-information-2-fill"></i> About <i>Movies + More</i>
+                    <i className=" mr-1 ri-information-2-fill"></i> About{" "}
+                    <i>Movies + More</i>
                 </Link>
 
                 <Link className="w-full p-2 rounded-md transition duration-300 hover:font-semibold hover:text-white hover:bg-[#6556CD]">
                     <i className=" mr-1 ri-phone-fill"></i> Contact us
                 </Link>
-
             </nav>
         </div>
     );
