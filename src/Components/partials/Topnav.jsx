@@ -22,7 +22,7 @@ const Topnav = ({ onClickHam, hamburger }) => {
     }, [query]);
 
     return (
-        <div className="w-full flex justify-center items-center gap-4 sm:p-4 py-5 pl-12 relative">
+        <div className="w-full flex justify-center items-center sm:gap-4 gap-1 sm:p-4 py-5 pl-12 relative">
             <i
                 onClick={onClickHam}
                 className={`${hamburger ? "inline-block" : "hidden"

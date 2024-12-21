@@ -2,7 +2,7 @@ import React from 'react'
 
 const Dropdown = ( {title , options , func } ) => {
     return (
-        <div className="select relative sm:w-52 w-36 transition-all duration-300 ease-in-out">
+        <div className="select relative sm:w-52 w-32 transition-all duration-300 ease-in-out">
             <select
                 className="outline-none bg-zinc-700 text-white w-full py-1 px-3 rounded-lg shadow-lg appearance-none cursor-pointer focus:ring focus:ring-blue-500 transition-all"
                 defaultValue="0"
@@ -10,11 +10,11 @@ const Dropdown = ( {title , options , func } ) => {
                 name="format"
                 id="format"
             >
-                <option className=" bg-zinc-600 hover:bg-zinc-700" defaultValue="1">
+                <option className=" bg-zinc-600 hover:bg-zinc-700 text-xs " defaultValue="1">
                     {title.toUpperCase()}
                 </option>
                 {options.map((o , i)=>{
-                    return <option key={i} className=" bg-zinc-600 hover:bg-zinc-700 " value={o}>
+                    return <option key={i} className=" bg-zinc-600 hover:bg-zinc-700 text-xs " value={o}>
                         {o.toUpperCase()}
                     </option>
                 })}

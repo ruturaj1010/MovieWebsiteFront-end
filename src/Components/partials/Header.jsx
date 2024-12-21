@@ -17,9 +17,9 @@ const Header = ({ data }) => {
         backgroundPosition: "center center",
         backgroundRepeat: "no-repeat",
       }}
-      className="w-full h-[50vh] flex flex-col justify-end items-start px-[7%] pb-6"
+      className="w-full h-[53vh] flex flex-col justify-end items-start px-[7%] pb-6"
     >
-      <h1 className="w-[50%] text-4xl font-bold tracking-wide whitespace-nowrap text-purple-400">
+      <h1 className="sm:w-[50%] w-[80vw] line-clamp-3 text-4xl font-bold tracking-wide text-purple-400">
         {data.name || data.original_name || data.title || data.original_title} :{" "}
       </h1>
 
