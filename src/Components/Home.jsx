@@ -47,7 +47,7 @@ const Home = () => {
 
     return wallpaper && trending ? (
         
-        <div className="w-full h-full flex">
+        <div className="w-full h-full flex ">
 
             <div
                 className={`${
@@ -60,7 +60,7 @@ const Home = () => {
             <div className="w-full xl:w-[82%] h-screen overflow-y-auto">
                 <Topnav onClickHam={toggleSidebar} hamburger={!isSidebarOpen} />
                 <Header data={wallpaper} />
-                <div className="w-full h-[58vh] p-4 mb-5">
+                <div className="w-full sm:h-[58vh] h-[48vh] p-4 mb-5">
                     <div className="w-full flex justify-between items-center">
                         <h1 className="text-2xl font-semibold">Trending</h1>
                         <Dropdown

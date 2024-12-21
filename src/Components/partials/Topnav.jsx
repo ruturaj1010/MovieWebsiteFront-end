@@ -22,7 +22,7 @@ const Topnav = ({ onClickHam, hamburger }) => {
     }, [query]);
 
     return (
-        <div className="w-full flex justify-center items-center gap-4 p-4 relative">
+        <div className="w-full flex justify-center items-center gap-4 sm:p-4 py-5 pl-12 relative">
             <i
                 onClick={onClickHam}
                 className={`${hamburger ? "inline-block" : "hidden"
@@ -34,7 +34,7 @@ const Topnav = ({ onClickHam, hamburger }) => {
                 name="searchQuery"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                className="w-[50%] px-3 py-1 text-lg text-zinc-300 outline-none border-none bg-transparent placeholder-zinc-300 "
+                className="sm:w-[50%] w-[70%] px-3 py-1 text-lg text-zinc-300 outline-none border-none bg-transparent placeholder-zinc-300 "
                 placeholder="search anything here"
             />
             <div className="w-5">
@@ -46,7 +46,7 @@ const Topnav = ({ onClickHam, hamburger }) => {
                 )}
             </div>
 
-            <div className="w-[55%] max-h-[49vh]  absolute top-[96%] bg-zinc-300 text-black overflow-y-auto">
+            <div className="sm:w-[55%] w-[75%] max-h-[49vh]  absolute top-[97%] bg-zinc-300 text-black overflow-y-auto">
                 {searches &&
                     searches.map((item, index) => {
                         return (

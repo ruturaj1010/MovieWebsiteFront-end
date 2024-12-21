@@ -23,7 +23,7 @@ const Header = ({ data }) => {
         {data.name || data.original_name || data.title || data.original_title} :{" "}
       </h1>
 
-      <p className="w-[50%] my-2">
+      <p className="sm:w-[50%] w-[90%] my-2 transition-all duration-300 ease-in-out">
         {data?.overview?.slice(0, 190) || "Header is not defined"} ...
         <Link
           to={`/${data.media_type}/details/${data.id}`}
@@ -40,6 +40,7 @@ const Header = ({ data }) => {
           <span className="text-rose-500 uppercase text-base">
             {data.first_air_date || data.release_date}
           </span>{" "}
+          <br />
           Type :{" "}
           <span className="text-rose-500 uppercase text-base">
             {data.media_type}
