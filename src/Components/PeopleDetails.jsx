@@ -35,7 +35,7 @@ const PeopleDetails = () => {
 
         <div className="xl:w-1/5 w-full xl:min-h-screen flex xl:block text-zinc-400">
 
-          <div>
+          <div className="w-[50vw] sm:w-64">
             <img
               className="w-[85%] h-[40vh] mb-2 object-cover object-center rounded-md"
               src={ `https://image.tmdb.org/t/p/original/${info.detail.profile_path}` }
@@ -79,7 +79,7 @@ const PeopleDetails = () => {
             </div>
           </div>
 
-          <div>
+          <div className="w-[50vw] sm:w-64">
             <h1 className=" font-semibold text-zinc-200 text-xl xl:mt-5 " >Person Information</h1>
 
             <h1 className=" font-medium text-base mt-3 " >Known for</h1>
